@@ -1,4 +1,4 @@
-1.icon(logo) + website name
-2.the information of users
-3.what airtable 
-4.Structure(Wheather we gain data from Airtable and application looks like icall or other way around)
+*1(most important): Does the structure like the left picture? Using airtable api and build structures and functions like icall?
+2.what is the website's name and logo?
+3.what should we know about the information of users' account database(like username, password, email and phone number)
+4.Can we get the permission to use client's airtable account? If not, where can we get the dataset?
