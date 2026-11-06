@@ -1,0 +1,38 @@
+name: Offline booking example
+on:
+  pull_request:
+    paths:
+      - 'Coding/offline-gantt/**'
+      - '.github/workflows/offline-gantt.yml'
+  push:
+    branches: [master]
+    paths:
+      - 'Coding/offline-gantt/**'
+      - '.github/workflows/offline-gantt.yml'
+permissions:
+  contents: read
+jobs:
+  example:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+      - run: node --test Coding/offline-gantt/model.test.js
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - run: python -m pip install playwright==1.58.0
+      - run: python -m playwright install --with-deps chromium
+      - run: python Coding/offline-gantt/browser_check.py
+        env:
+          SCREENSHOT_DIR: gantt-screenshots
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: offline-gantt-screenshots
+          path: gantt-screenshots/*.png
+          retention-days: 7

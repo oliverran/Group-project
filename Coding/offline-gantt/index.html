@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'none'; img-src 'none'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Group-project · Offline booking lab</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="model.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">GROUP-PROJECT / INTERACTIVE EXAMPLE</p>
+      <h1>A booking timeline,<br>without the backend.</h1>
+      <p class="intro">Explore how dates become bars, compare time windows, and spot overlapping reservations.</p>
+      <p class="badge">Offline · Synthetic data only · No sign-in</p>
+    </header>
+    <section class="lesson" aria-labelledby="lesson-title">
+      <div><p id="step-count" class="eyebrow"></p><h2 id="lesson-title"></h2><p id="lesson-text"></p></div>
+      <div class="lesson-actions"><button id="lesson-back" type="button">Previous lesson</button><button id="lesson-next" type="button">Next lesson</button></div>
+    </section>
+    <section class="workspace" aria-labelledby="workspace-title">
+      <div class="section-heading"><h2 id="workspace-title">Booking playground</h2><button id="reset" type="button">Reset demo</button></div>
+      <div class="controls">
+        <label>Scenario<select id="scenario"><option value="normal">Typical bookings</option><option value="overlap">Overlapping bookings</option><option value="empty">No bookings</option></select></label>
+        <label>Resource<select id="resource"><option value="all">All resources</option></select></label>
+        <label>Window<select id="span"><option value="14">14 days</option><option value="28">28 days</option></select></label>
+      </div>
+      <div class="navigation"><button id="earlier" type="button">← Earlier</button><p id="window-label"></p><button id="later" type="button">Later →</button></div>
+      <p id="summary" role="status" aria-live="polite"></p>
+      <p class="hint">Select any bar to inspect its dates. Each lane is a resource; overlapping bookings are stacked and labelled “Conflict”.</p>
+      <div class="chart-scroll" tabindex="0" role="region" aria-label="Scrollable booking timeline"><div id="chart"></div></div>
+      <aside id="selection" aria-live="polite"><h3>Inspect a booking</h3><p>Select a bar or a booking ID in the table.</p></aside>
+      <details><summary>Accessible booking table</summary><div class="table-scroll"><table><caption>Bookings visible in this window. End dates are exclusive.</caption><thead><tr><th scope="col">Booking</th><th scope="col">Resource</th><th scope="col">Start</th><th scope="col">End (exclusive)</th><th scope="col">Status</th></tr></thead><tbody id="booking-rows"></tbody></table></div></details>
+    </section>
+    <section class="notes" aria-labelledby="learn-title"><h2 id="learn-title">What this example teaches</h2><ol><li><strong>Date intervals:</strong> a booking occupies [start, end). One that ends on June 5 can be followed by another starting June 5.</li><li><strong>Clipping:</strong> bars are cropped to the visible window; inspection still shows the full booking.</li><li><strong>Conflicts:</strong> two bookings conflict only when they overlap on the same resource.</li></ol><p>All resource names and DEMO IDs are invented. Changes exist only in this page and reset on reload. This is a separate teaching example, not the historical application or a production booking system.</p></section>
+    <noscript><p>Enable JavaScript to use the playground. No network access is needed.</p></noscript>
+    <footer>Read README.md in this folder for the code walkthrough, test commands, and limitations.</footer>
+  </main>
+</body>
+</html>

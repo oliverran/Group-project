@@ -1,4 +1,13 @@
 # Group-project
+
+## Try the offline interactive example
+
+Explore a self-contained booking timeline with synthetic data, guided lessons, filters, zoom, and conflict examples. No account, backend, or internet connection is needed.
+
+**[Start the offline booking lab](Coding/offline-gantt/README.md)** · Open [index.html](Coding/offline-gantt/index.html) locally after downloading the repository.
+
+The historical project and third-party notices below are preserved. This separate example does not use real customer data or the existing login/Airtable code.
+
 Overview
 Warren Elsmore Ltd provide LEGO exhibitions and individual LEGO models for rental to our customers. We take bookings for up to 3 years in advance.
 
@@ -20,3 +29,4 @@ Final list to be agreed, but the deliverables are expected to include;
 Note:
 PLease update coding at Coding Folder
 update personal document at update Folder
+
