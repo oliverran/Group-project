@@ -1,0 +1,54 @@
+:root { color-scheme: light; font-family: system-ui, sans-serif; color: #142d36; background: #f4f6f3; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 1180px; margin: auto; padding: 44px 24px; }
+header { padding: 12px 0 30px; }
+.eyebrow { font-size: .75rem; font-weight: 750; letter-spacing: .11em; color: #40656b; }
+h1 { font-size: clamp(2.3rem, 5vw, 4.2rem); line-height: 1.06; letter-spacing: -.05em; margin: 16px 0; }
+h2 { font-size: 1.35rem; margin: 0 0 10px; }
+h3 { margin: 0 0 6px; font-size: 1rem; }
+p { line-height: 1.6; }
+.intro { max-width: 640px; font-size: 1.1rem; }
+.badge { display: inline-block; border: 1px solid #9db9ae; border-radius: 30px; padding: 7px 14px; color: #275446; font-size: .85rem; }
+.lesson { background: #143e49; color: white; padding: 24px; border-radius: 16px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.lesson .eyebrow { color: #a9ddd2; margin-top: 0; }
+.lesson p:last-child { margin-bottom: 0; max-width: 660px; }
+.lesson-actions { display: flex; gap: 8px; flex-wrap: wrap; flex: 0 0 170px; }
+button, select { font: inherit; border: 1px solid #99afb0; border-radius: 8px; padding: 10px 12px; color: #143e49; background: white; }
+button { cursor: pointer; font-weight: 650; }
+button:hover:not(:disabled) { background: #dff3ed; }
+button:disabled { opacity: .6; cursor: default; }
+:focus-visible { outline: 3px solid #bd6500; outline-offset: 3px; }
+.workspace { padding: 28px; margin: 22px 0; background: white; border: 1px solid #d3dfda; border-radius: 16px; }
+.section-heading, .navigation { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.section-heading h2 { margin: 0; }
+.controls { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+label { font-size: .85rem; font-weight: 700; }
+select { display: block; width: 100%; margin-top: 8px; font-weight: 400; }
+.navigation p { text-align: center; font-weight: 650; }
+#summary { color: #315d55; font-weight: 650; }
+.hint, footer { color: #486068; font-size: .85rem; }
+.chart-scroll, .table-scroll { overflow-x: auto; }
+#chart { min-width: 750px; }
+.axis, .resource-row { display: grid; grid-template-columns: 150px 1fr; }
+.axis { padding-bottom: 8px; font-size: .72rem; color: #486068; }
+.ticks { display: grid; grid-template-columns: repeat(var(--days), 1fr); }
+.ticks span { text-align: center; }
+.resource-row { border-top: 1px solid #dae4df; min-height: 66px; }
+.resource-name { padding: 19px 12px 12px 0; font-size: .86rem; font-weight: 650; }
+.lanes { background: repeating-linear-gradient(to right, transparent 0, transparent calc(100% / var(--days) - 1px), #e4ece8 calc(100% / var(--days) - 1px), #e4ece8 calc(100% / var(--days))); padding: 10px 0; }
+.bar-row { position: relative; height: 42px; }
+.bar { position: absolute; top: 2px; height: 36px; background: #cfeee6; border: 1px solid #3d7b6d; padding: 3px 7px; overflow: hidden; white-space: nowrap; font-size: .75rem; text-align: left; }
+.bar.conflict { background: #fff0db; border-color: #a05a13; color: #663a0f; }
+.bar[aria-pressed="true"] { box-shadow: inset 0 0 0 2px currentColor; }
+.lane-empty { margin: 8px; font-size: .85rem; color: #486068; }
+#selection { margin: 20px 0; padding: 17px; border-left: 4px solid #388070; background: #f2f7f4; }
+#selection p { margin: 0; }
+details summary { cursor: pointer; font-weight: 650; padding: 12px 0; }
+table { border-collapse: collapse; width: 100%; text-align: left; font-size: .85rem; }
+caption { text-align: left; padding: 8px 0; color: #486068; }
+th, td { padding: 10px; border-bottom: 1px solid #d3dfda; white-space: nowrap; }
+.notes { padding: 20px 0; max-width: 850px; }
+li { padding: 5px 0; line-height: 1.6; }
+footer { border-top: 1px solid #d3dfda; padding-top: 20px; }
+@media (max-width: 650px) { main { padding: 22px 14px; } .lesson { display: block; padding: 20px; } .lesson-actions { margin-top: 18px; } .workspace { padding: 18px 12px; } .controls { grid-template-columns: 1fr; gap: 12px; } .navigation { flex-wrap: wrap; } .navigation p { order: -1; width: 100%; } }
